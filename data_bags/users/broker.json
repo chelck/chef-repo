@@ -1,0 +1,8 @@
+{
+ "id": "broker",
+ "comment": "BrokerNet Application",
+ "uid": 2001,
+ "gid": 0,
+ "home": "/home/broker",
+ "shell": "/bin/bash"
+}
