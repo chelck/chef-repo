@@ -1,5 +1,6 @@
 {
 "id": "icap",
 "gid": 3000,
-"members": ["broker"]
+"members": ["brokernet"]
 }
+
