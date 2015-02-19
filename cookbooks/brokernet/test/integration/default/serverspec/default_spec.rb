@@ -9,7 +9,7 @@ describe 'brokernet::default' do
   #  skip 'Replace this with meaningful tests'
   #end
 
-  describe package('emacs') do
+  describe package('tree') do
     it { should be_installed }
   end 
 
