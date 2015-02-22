@@ -31,5 +31,15 @@ directory "/home/broker/runtime" do
   group "icap"
 end
 
+#include_recioe "yum_repository"
 
+yum_repository 'chris' do
+  description "Chris' first unstable repo"
+  baseurl "http://192.168.1.8/chris/yum/"
+  gpgcheck false
+  action :create
+end
 
+package "Example-RPM-Project"
+
+include_recipe "ojava"

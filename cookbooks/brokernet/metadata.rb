@@ -7,5 +7,7 @@ long_description 'Installs/Configures brokernet'
 version          '0.1.0'
 
 depends "users"
+depends "yum"
+depends "ojava"
 
 
