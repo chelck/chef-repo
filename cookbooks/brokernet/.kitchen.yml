@@ -13,5 +13,6 @@ suites:
   - name: default
     data_bags_path: "../../data_bags"
     run_list:
+      - recipe[ojava::default]
       - recipe[brokernet::default]
     attributes:
