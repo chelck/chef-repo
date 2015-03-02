@@ -4,5 +4,11 @@
  "uid": 2001,
  "gid": 0,
  "home": "/home/broker",
- "shell": "/bin/bash"
+ "shell": "/bin/bash",
+ "password": "$1$u8FIdBNC$wB8BvxoZJjWk51A1paJcL0",
+
+ "md": "chef",
+ "region": "NJ",
+ "side": "A",
+ "logicalIp": "172.16.12.10"
 }

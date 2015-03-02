@@ -3,5 +3,9 @@ source "https://supermarket.chef.io"
 metadata
 
 cookbook "ojava", path: "../ojava"
+cookbook 'tar', '~> 0.6.0'
+cookbook 'magic_shell', '~> 1.0.0'
+
+
 
 

@@ -14,6 +14,26 @@ search("users", "*:*").each do |user_data|
     gid user_data["gid"]
     home user_data["home"]
     shell user_data["shell"]
+    password user_data["password"]
+  end
+end
+
+
+
+search(:users, "*:*").each do |user|
+  login = user["id"]
+
+  template "/home/#{login}/.myenv.cfg" do
+    source "myenv.erb"
+    owner user["uid"]
+    group user["gid"]
+    variables(
+       :myenv_steamed => user["comment"],
+       :user_md => user["md"],
+       :user_region => user["region"],
+       :user_side => user["side"],
+       :user_logicalIp => user["logicalIp"]
+    )
   end
 end
 
@@ -42,4 +62,19 @@ end
 
 package "Example-RPM-Project"
 
-include_recipe "ojava"
+#include_recipe "ojava"
+
+include_recipe "tar"
+
+version = '1.3.0'
+
+tar_extract "http://192.168.1.8/chris/brokernet/littlebroker-#{version}.tgz" do
+  target_dir "/home/broker"
+  creates "/home/broker/littlebroker-#{version}/lib"
+#  tar_flags [ '-P', '--strip-components 1' ]
+end
+
+#include_recipe "magic_shell"
+
+magic_shell_environment 'PATH' do value "$PATH:/home/broker/littlebroker-#{version}/bin" end 
+

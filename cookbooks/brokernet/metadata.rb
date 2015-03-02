@@ -6,8 +6,10 @@ description      'Installs/Configures brokernet'
 long_description 'Installs/Configures brokernet'
 version          '0.2.0'
 
+depends "magic_shell"
+depends "ojava"
+depends "tar"
 depends "users"
 depends "yum"
-depends "ojava"
 
 
